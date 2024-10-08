@@ -18,7 +18,7 @@ h2 {
 
 p {
   font-family: avenir;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* unvisited link */
@@ -39,6 +39,9 @@ a:hover {
 div.background {
   background: url("newsroom.jpg") repeat;
   border: 2px solid black;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
 }
 
 div.transbox {
@@ -58,26 +61,55 @@ div.nbc {
   max-width: 700px;
   height: 150px;
   background-color: powderblue;
+  margin: auto;
+  width: 80%;
+  padding: 5px;
+
+.center { 
+  height: 215px;
+  position: relative;
+  border: 3px solid darkblue; 
 }
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+}
+
 </style>
 </head>
 <body>
 
 <h1>Nicole Tan</h1>
 <h2>About Me</h2>
-<p>I'm a fourth-year student at Northwestern University studying journalism and legal studies, with a minor in political science. Welcome to my portfolio.</p>
-<p><b>I worked at <a href="https://www.nbcnews.com/" >NBC Owned Television Stations</a> as a National Digital Editorial Intern.</b></p>
+<p>I'm a fourth-year student at Northwestern University studying journalism and legal studies, with a minor in political science. Welcome to my portfolio!</p>
+<p></p>
 
 <div class="background">
 	<div class="transbox">
-	  <p>This is some text that is placed in the transparent box.</p>
+	  <h2>Clips</h2>
 	</div>
   </div>
-
+<br>
   <div class="nbc">
 	<h2>NBC Universal</h2>
-	<p>I'm accepting <span style="color:blue">donations</span> for gifts at the moment. If you have a moment, consider giving me the following:</p>
-
+	<p>I worked at <a href="https://www.nbcnews.com/" >NBC Owned Television Stations</a> as a National Digital Editorial Intern. I covered the <span style="color:blue">Olympics</span> and the <span style="color:blue">2024 election cycle</span>. Here are some stories:</p>
+<br>
+  <div class="center">
+    <ul>
+      <li><a href="https://www.nbcnewyork.com/news/national-international/do-amber-alerts-really-bring-missing-children-home/5701428/">Do Amber Alerts really bring missing children home?</a></li>
+      <li><a href="https://www.nbcnewyork.com/paris-2024-summer-olympics/the-making-of-simone-biles-viral-goat-necklace/5660197/">The jeweler behind Simone Biles' GOAT necklace reveals all the details of the piece</a></li>
+      <li><a href="https://www.nbcwashington.com/news/national-international/the-republican-partys-2024-platform-reflects-a-trump-centric-shift-in-policies/3661801/">The Republican party's 2024 platform reflects a Trump-centric shift in policies</a></li>
+      <li><a href="https://www.nbcwashington.com/news/national-international/15-year-old-scientist-soap-treat-skin-cancer-times-2024-kid-of-the-year/3695989/">15-year-old Virginia scientist created a soap that could treat skin cancer, named Time's 2024 Kid of the Year</a></li>
+      <li><a href="https://www.nbcnewyork.com/news/local/bomb-threat-nyc-jewish-hospitals/5724987/">Oregon man allegedly behind bomb threats targeting Jewish hospitals in NYC</a></li>
+      <li><a href="https://www.nbcnewyork.com/paris-2024-summer-olympics/pin-trading-the-unofficial-sport-of-the-olympic-games/5655696/">Pin trading is the unofficial sport of the Olympic Games</a></li>
+    </ul>
+  </div>
 
 </body>
 </html>
@@ -86,5 +118,5 @@ div.nbc {
 
 
 	
-</body/>
+</body>
 </html>
