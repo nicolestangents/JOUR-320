@@ -41,7 +41,7 @@ a:hover {
 
   /* Divs */
 div.background {
-  background: url("newsroom.jpg") repeat;
+  background: url("newsroom.jpg");
   border: 2px solid black;
   margin: auto;
   width: 80%;
@@ -62,7 +62,6 @@ div.transbox p {
 }
 
 div.nbc {
-  max-width: 700px;
   background-color: powderblue;
   z-index: 1;
   margin: auto;
@@ -71,12 +70,30 @@ div.nbc {
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
 
+div.scmp {
+  background-color: #FFCA05;
+  z-index: 1;
+  margin: auto;
+  width: 80%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-.center { 
+div.center1 { 
   position: relative;
   z-index: 2;
   border: 3px inset #400095; 
+  overflow:auto;
+}
+
+div.center2 { 
+  position: relative;
+  z-index: 2;
+  border: 3px inset white; 
   overflow:auto;
 }
 
@@ -88,6 +105,29 @@ div.nbc {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nbc, .scmp {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@media (orientation : portrait) {
+  #container {
+    flex-direction: column;
+  }
+}
+
+.propublica-image {
+   width: 80%;
+   display: block; /* Center the image */
+   margin: auto; /* Center the image */
 }
 
 </style>
@@ -105,28 +145,44 @@ div.nbc {
 	</div>
   </div>
 <br>
+
+<div class="container">
   <div class="nbc">
-	<h2>NBC Universal</h2>
-	<p>I worked at <a href="https://www.nbcnews.com/" >NBC Owned Television Stations</a> as a National Digital Editorial Intern. I covered the <span style="color:blue">Olympics</span> and the <span style="color:blue">2024 election cycle</span>. Here are some stories:</p>
+    <h2>NBCUniversal</h2>
+    <p>I worked at <a href="https://www.nbcnews.com/" >NBC Owned Television Stations</a> as a National Digital Editorial Intern in 2024. I covered the <span style="color:blue">Olympics</span> and the <span style="color:blue">2024 election cycle</span>. Here are some stories:</p>
+  <br>
+
+  <div class="center1">
+    <ul>
+      <li><a href="https://www.nbcnewyork.com/news/national-international/do-amber-alerts-really-bring-missing-children-home/5701428/">Do Amber Alerts really bring missing children home?</a></li>
+      <li><a href="https://www.nbcnewyork.com/paris-2024-summer-olympics/the-making-of-simone-biles-viral-goat-necklace/5660197/">The jeweler behind Simone Biles' GOAT necklace reveals all the details of the piece</a></li>
+      <li><a href="https://www.nbcwashington.com/news/national-international/the-republican-partys-2024-platform-reflects-a-trump-centric-shift-in-policies/3661801/">The Republican party's 2024 platform reflects a Trump-centric shift in policies</a></li>
+      <li><a href="https://www.nbcwashington.com/news/national-international/15-year-old-scientist-soap-treat-skin-cancer-times-2024-kid-of-the-year/3695989/">15-year-old Virginia scientist created a soap that could treat skin cancer, named Time's 2024 Kid of the Year</a></li>
+      <li><a href="https://www.nbcnewyork.com/news/local/bomb-threat-nyc-jewish-hospitals/5724987/">Oregon man allegedly behind bomb threats targeting Jewish hospitals in NYC</a></li>
+      <li><a href="https://www.nbcnewyork.com/paris-2024-summer-olympics/pin-trading-the-unofficial-sport-of-the-olympic-games/5655696/">Pin trading is the unofficial sport of the Olympic Games</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="scmp">
+    <h2>South China Morning Post</h2>
+    <p>I worked at <a href="https://www.scmp.com//" >SCMP</a> as an Editorial Intern at the Culture Desk in 2023. These are a few of my favorite articles:</p>
+    
+    <div class="center2">
+      <ul>
+        <li><a href="https://www.scmp.com/lifestyle/fashion-beauty/article/3227105/how-sams-tailor-heir-hong-kong-using-tiktok-and-instagram-make-suits-cool-kids-after-dressing-us">How Sam’s Tailor heir in Hong Kong is using TikTok and Instagram to make suits ‘cool for kids’</a></li>
+        <li><a href="https://www.scmp.com/lifestyle/entertainment/article/3229603/host-hong-kongs-axed-lgbtq-radio-show-reflects-17-years-we-are-family-and-reveals-why-cancellation">Host of Hong Kong’s axed LGBTQ radio show reflects on 17 years of We Are Family, and reveals why the cancellation wasn’t ‘something that surprised’ him</a></li>
+        <li><a href="How sustainable are school meals in Hong Kong? Advocates see a chance to teach students about the impact of their food choices. Providers point to dependence on imports">How sustainable are school meals in Hong Kong? Advocates see a chance to teach students about the impact of their food choices. Providers point to dependence on imports</a></li>
+      </ul>
+     </div>
+  
+  </div>
+</div>
 <br>
 
-<div class="center">
-  <ul>
-    <li><a href="https://www.nbcnewyork.com/news/national-international/do-amber-alerts-really-bring-missing-children-home/5701428/">Do Amber Alerts really bring missing children home?</a></li>
-    <li><a href="https://www.nbcnewyork.com/paris-2024-summer-olympics/the-making-of-simone-biles-viral-goat-necklace/5660197/">The jeweler behind Simone Biles' GOAT necklace reveals all the details of the piece</a></li>
-    <li><a href="https://www.nbcwashington.com/news/national-international/the-republican-partys-2024-platform-reflects-a-trump-centric-shift-in-policies/3661801/">The Republican party's 2024 platform reflects a Trump-centric shift in policies</a></li>
-    <li><a href="https://www.nbcwashington.com/news/national-international/15-year-old-scientist-soap-treat-skin-cancer-times-2024-kid-of-the-year/3695989/">15-year-old Virginia scientist created a soap that could treat skin cancer, named Time's 2024 Kid of the Year</a></li>
-    <li><a href="https://www.nbcnewyork.com/news/local/bomb-threat-nyc-jewish-hospitals/5724987/">Oregon man allegedly behind bomb threats targeting Jewish hospitals in NYC</a></li>
-    <li><a href="https://www.nbcnewyork.com/paris-2024-summer-olympics/pin-trading-the-unofficial-sport-of-the-olympic-games/5655696/">Pin trading is the unofficial sport of the Olympic Games</a></li>
-  </ul>
-</div>
+<img src="propublica.jpg" class="propublica-image">
 
-</body>
-</html>
+  <p> One of the most impactful reporting projects I have worked on was the "With Every Breath" series. </p>
+  
 
-
-
-
-	
 </body>
 </html>
