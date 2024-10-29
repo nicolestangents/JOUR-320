@@ -3,22 +3,25 @@
 <style>
   /* Text styles */
 body {
-  background-color: #dbdcc8;
+  background-color: #FCFBF4;
 }
 
 h1 {
   color: black;
   text-align: center;
+  font-family: sans-serif
 }
 
 h2 {
   color: black;
   text-align: center;
   font-size: 25px;
+  font-family: sans-serif
 }
 
 p {
   font-family: avenir;
+  text-align: center;
   font-size: 15px;
 }
 
@@ -130,12 +133,42 @@ div.center2 {
    margin: auto; /* Center the image */
 }
 
+.headshot {
+  width: 225; 
+  display: block;
+  margin-left: 30;
+  margin-right: 20px;
+}
+
+.image-text-container {
+   display: flex;
+   align-items: center; /* Optional: aligns text vertically center with the image */
+}
+
+.aboutme-right {
+   flex: 1;
+   text-align: left;
+}
+
 </style>
 </head>
 <body>
 
-<h1>Nicole Tan</h1>
-<h2>About Me</h2>
+<br>
+<h1>NICOLE TAN</h1>
+<p> nicoletan2025@u.northwestern.edu | (872) 985-8708 | <a href="https://www.linkedin.com/in/nyjtan/"> LinkedIn</a> </p>
+
+<br>
+
+<div class="image-text-container">
+  <img src="headshot.jpg" class="headshot" alt="Nicole Tan Headshot">
+  <div class="aboutme-right">
+    <h2>About Me</h2>
+    <p> This is the text that will appear to the right of the image. You can add as much text as you like here,
+       and it will adjust to stay on the right side of the image. </p>
+  </div>
+  </div>
+
 <p>I'm a fourth-year student at Northwestern University studying journalism and legal studies, with a minor in political science. Welcome to my portfolio!</p>
 <p></p>
 
