@@ -9,7 +9,8 @@ body {
 h1 {
   color: black;
   text-align: center;
-  font-family: sans-serif
+  font-family: sans-serif;
+  font-size: 40
 }
 
 h2 {
@@ -43,11 +44,19 @@ a:hover {
 }
 
   /* Divs */
-div.background {
+div.newsroom {
   background: url("newsroom.jpg");
   border: 2px solid black;
   margin: auto;
-  width: 80%;
+  width: 95%;
+  padding: 10px;
+}
+
+div.newspaper {
+  background: url("newspaper.jpg");
+  border: 2px solid black;
+  margin: auto;
+  width: 95%;
   padding: 10px;
 }
 
@@ -55,35 +64,13 @@ div.transbox {
   margin: 30px;
   background-color: #ffffff;
   border: 1px dashed black;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 div.transbox p {
   margin: 5%;
   font-weight: bold;
   color: #000000;
-}
-
-div.nbc {
-  background-color: powderblue;
-  z-index: 1;
-  margin: auto;
-  width: 80%;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-div.scmp {
-  background-color: #FFCA05;
-  z-index: 1;
-  margin: auto;
-  width: 80%;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 div.center1 { 
@@ -109,28 +96,45 @@ div.center2 {
   transform: translate(-50%, -50%);
 }
 
-#container {
+.container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.nbc, .scmp {
-  flex: 1;
-  padding: 10px;
+div.nbc, div.scmp, div.propublica, div.midstory {
+  margin: 1%;
+  width: 48%;
+  padding: 20px;
+  min-height: 350px;
   box-sizing: border-box;
 }
 
-@media (orientation : portrait) {
-  #container {
-    flex-direction: column;
-  }
+div.nbc {
+  background-color: powderblue; 
+  margin-right: 1%
+}
+
+div.scmp {
+  background-color: #FFCA05;
+}
+
+div.propublica {
+  background-color: #a5c0c1;
+  margin-top: 2%;
+  margin-right: 1%
+}
+
+div.midstory {
+  background-color: #eb544c;
+  margin-top: 2%;
 }
 
 .propublica-image {
-   width: 80%;
-   display: block; /* Center the image */
-   margin: auto; /* Center the image */
+   width: 100%;
+   display: block; 
+   margin: auto; 
 }
 
 .headshot {
@@ -142,16 +146,49 @@ div.center2 {
 
 .image-text-container {
    display: flex;
-   align-items: center; /* Optional: aligns text vertically center with the image */
+   align-items: center; 
 }
 
 .aboutme-right {
    flex: 1;
+}
+
+.aboutme-right h2,
+.aboutme-right p {
    text-align: left;
+}
+
+.multimedia-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Adds space between video and text */
+}
+
+.youtube-container {
+  max-width: 400px; /* Set max width for the video */
+  position: relative;
+  width: 100%; /* Set to full width of the container */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youtube-text-container {
+  flex: 1; /* Text container takes up one portion of space */
+  max-width: 400px; /* Set a max-width to control text container size */
+  margin-left: 20px;
 }
 
 </style>
 </head>
+
 <body>
 
 <br>
@@ -164,17 +201,20 @@ div.center2 {
   <img src="headshot.jpg" class="headshot" alt="Nicole Tan Headshot">
   <div class="aboutme-right">
     <h2>About Me</h2>
-    <p> This is the text that will appear to the right of the image. You can add as much text as you like here,
-       and it will adjust to stay on the right side of the image. </p>
+    <p> Nicole is a fourth-year student at Northwestern University studying journalism and legal studies, 
+      with a minor in political science. Having grown up in three politically divided cities — Hong Kong, 
+      Shanghai, and Taipei — she quickly developed an interest in consuming news media to contextualize the 
+      tensions she saw every day. Though Nicole hopes to attend law school, she is still passionate about
+      reporting and hopes the skills picked up through journalism will benefit her legal journey. Explore some of
+      her best work here, along with her experimentation with data visualizations. </p>
   </div>
   </div>
 
-<p>I'm a fourth-year student at Northwestern University studying journalism and legal studies, with a minor in political science. Welcome to my portfolio!</p>
-<p></p>
-
-<div class="background">
+<br>
+<br>
+<div class="newspaper">
 	<div class="transbox">
-	  <h2>Clips</h2>
+	  <h2>clips</h2>
 	</div>
   </div>
 <br>
@@ -184,7 +224,6 @@ div.center2 {
     <h2>NBCUniversal</h2>
     <p>I worked at <a href="https://www.nbcnews.com/" >NBC Owned Television Stations</a> as a National Digital Editorial Intern in 2024. I covered the <span style="color:blue">Olympics</span> and the <span style="color:blue">2024 election cycle</span>. Here are some stories:</p>
   <br>
-
   <div class="center1">
     <ul>
       <li><a href="https://www.nbcnewyork.com/news/national-international/do-amber-alerts-really-bring-missing-children-home/5701428/">Do Amber Alerts really bring missing children home?</a></li>
@@ -198,13 +237,41 @@ div.center2 {
   </div>
   <div class="scmp">
     <h2>South China Morning Post</h2>
-    <p>I worked at <a href="https://www.scmp.com//" >SCMP</a> as an Editorial Intern at the Culture Desk in 2023. These are a few of my favorite articles:</p>
-    
+    <p>I worked at <a href="https://www.scmp.com//" >SCMP</a> as an Editorial Intern at the Culture Desk in 2023, covering lifestyle, art, F&B, and health and wellness. These are a few of my favorite articles:</p>
     <div class="center2">
       <ul>
         <li><a href="https://www.scmp.com/lifestyle/fashion-beauty/article/3227105/how-sams-tailor-heir-hong-kong-using-tiktok-and-instagram-make-suits-cool-kids-after-dressing-us">How Sam’s Tailor heir in Hong Kong is using TikTok and Instagram to make suits ‘cool for kids’</a></li>
         <li><a href="https://www.scmp.com/lifestyle/entertainment/article/3229603/host-hong-kongs-axed-lgbtq-radio-show-reflects-17-years-we-are-family-and-reveals-why-cancellation">Host of Hong Kong’s axed LGBTQ radio show reflects on 17 years of We Are Family, and reveals why the cancellation wasn’t ‘something that surprised’ him</a></li>
-        <li><a href="How sustainable are school meals in Hong Kong? Advocates see a chance to teach students about the impact of their food choices. Providers point to dependence on imports">How sustainable are school meals in Hong Kong? Advocates see a chance to teach students about the impact of their food choices. Providers point to dependence on imports</a></li>
+        <li><a href="https://www.scmp.com/lifestyle/food-drink/article/3231920/how-sustainable-are-school-meals-hong-kong-advocates-see-chance-teach-students-about-impact-their">How sustainable are school meals in Hong Kong? Advocates see a chance to teach students about the impact of their food choices.</a></li>
+      </ul>
+     </div>
+  </div>
+  <div class="propublica">
+    <h2>Medill Investigative Lab</h2>
+    <p>As part of the <a href="https://mil.medill.northwestern.edu/" >Medill Investigative Lab</a>, I worked with journalists from ProPublica and the Pittsburgh Post Gazette on an investigative series, <a href="https://www.propublica.org/series/with-every-breath"> "With Every Breath."</a>
+    This is one of the most impactful reporting projects I have ever worked on.</p>
+
+  <br>
+  <div class="center1">
+    <ul>
+      <li><a href="https://www.propublica.org/article/philips-kept-warnings-about-dangerous-cpaps-secret-profits-soared">Philips Kept Complaints About Dangerous Breathing Machines Secret While Company Profits Soared</a></li>
+      <li><a href="https://www.propublica.org/article/nine-stories-of-people-impacted-by-philips-breathing-machine-recall">People Who Used Recalled Philips Breathing Machines Face Painful Choices</a></li>
+      <li><a href="https://www.propublica.org/article/how-the-fda-failed-to-protect-millions-of-people-tainted-breathing-machines">Millions of People Used Tainted Breathing Machines. The FDA Failed to Use Its Power to Protect Them.</a></li>
+      <li><a href="https://www.propublica.org/article/philips-lawsuit-settlement-cpap-breathing-machine-recall">Philips Agrees to Pay $1 Billion to Patients Who Say They Were Injured by Breathing Machines</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="midstory">
+    <h2>Midstory</h2>
+    <p>I worked at <a href="https://www.midstory.org/" >Midstory</a> as a summer intern in 2022. This was my first college internship, and my first time working in the United States. Here are a few of my long-form articles:</p>
+    <div class="center2">
+      <ul>
+        <li><a href="https://www.midstory.org/against-the-odds-chicagos-chinatown-continues-to-flourish/">Against the Odds, Chicago’s Chinatown Continues to Flourish</a></li>
+        <li><a href="https://www.midstory.org/burning-questions-what-do-rising-wet-bulb-temperatures-mean-for-the-midwest/"> Burning Questions: What Do Rising Wet-bulb Temperatures Mean for the Midwest?</a></li>
+        <li><a href="https://www.midstory.org/the-food-truck-offering-a-taste-of-indigenous-cuisine/">The Food Truck Offering a Taste of Indigenous Cuisine</a></li>
+        <li><a href="https://www.midstory.org/illinois-coal-plants-are-being-offered-second-chances-as-solar-projects/">Illinois Coal Plants Are Being Offered Second Chances as Solar Projects</a></li>
+        <li><a href="https://www.midstory.org/a-garden-in-the-sky-chicagos-green-rooftop-revolution/">A Garden in the Sky: Chicago’s Green Rooftop Revolution</a></li>
+        <li><a href="https://www.midstory.org/the-roche-de-boeuf-interurban-bridge-a-historical-site-on-the-verge-of-destruction/">The Roche de Boeuf Interurban Bridge: A Historical Site on the Verge of Destruction</a></li>
       </ul>
      </div>
   
@@ -212,10 +279,43 @@ div.center2 {
 </div>
 <br>
 
-<img src="propublica.jpg" class="propublica-image">
+<div class="newsroom">
+	<div class="transbox">
+	  <h2>multimedia / data visualizations</h2>
+	</div>
+  </div>
+<br>
 
-  <p> One of the most impactful reporting projects I have worked on was the "With Every Breath" series. </p>
-  
+<div class="multimedia-container">
+  <div class="youtube-container">
+    <iframe 
+      src="https://www.youtube.com/embed/pkE8JIc5E0A" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="youtube-text-container">
+    <p><b>"With Every Breath" Documentary</b></p>
+    <p>I had the pleasure of assisting ProPublica videojournalist Liz Moughon with her filming of the documentary accompanying the "With Every Breath" series.</p>
+  </div>
+</div>
+
+<br>
+<h2> Exploring Flourish </h2>
+<p>While I worked with Datawrapper during my internship with Midstory, this was my first time exploring Flourish's functions.
+  I decided to examine a dataset on <b>food inspections</b> in Chicago from 2010 to the present, taken from the 
+  <a href="https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/about_data"> Chicago Data Portal </a>. 
+</p>
+
+<div class="image-text-container">
+  <img src="data1.png" class="headshot" alt="The full data set on food inspections from the Chicago Data Portal.">
+  <div class="aboutme-right">
+    <h2>About Me</h2>
+    <p> text </p>
+  </div>
+  </div>
 
 </body>
 </html>
