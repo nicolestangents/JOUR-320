@@ -20,6 +20,13 @@ h2 {
   font-family: sans-serif
 }
 
+h3 {
+  color: black;
+  text-align: left;
+  font-size: 20px;
+  font-family: sans-serif
+}
+
 p {
   font-family: avenir;
   text-align: center;
@@ -54,6 +61,14 @@ div.newsroom {
 
 div.newspaper {
   background: url("newspaper.jpg");
+  border: 2px solid black;
+  margin: auto;
+  width: 95%;
+  padding: 10px;
+}
+
+div.socialmedia {
+  background: url("somed.jpeg");
   border: 2px solid black;
   margin: auto;
   width: 95%;
@@ -138,7 +153,7 @@ div.midstory {
 }
 
 .headshot {
-  width: 225; 
+  width: 250; 
   display: block;
   margin-left: 30;
   margin-right: 20px;
@@ -182,8 +197,28 @@ div.midstory {
 
 .youtube-text-container {
   flex: 1; /* Text container takes up one portion of space */
-  max-width: 400px; /* Set a max-width to control text container size */
+  width: 20% /* Set a max-width to control text container size */
   margin-left: 20px;
+}
+
+.instagram-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows posts to wrap on smaller screens */
+    gap: 16px; /* Adjusts the spacing between posts */
+    justify-content: space-between;
+}
+
+.instagram-post {
+    flex: 1; /* Adjusts width to fit four posts across the row */
+    margin: 10px; /* Adds spacing around each post */
+    max-width: 23%; /* Ensures the posts fit within the row */
+}
+
+@media (max-width: 600px) {
+    .instagram-post {
+        flex: 1 1 100%; /* Stacks posts vertically */
+        max-width: 100%;
+    }
 }
 
 </style>
@@ -307,15 +342,96 @@ div.midstory {
 <p>While I worked with Datawrapper during my internship with Midstory, this was my first time exploring Flourish's functions.
   I decided to examine a dataset on <b>food inspections</b> in Chicago from 2010 to the present, taken from the 
   <a href="https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/about_data"> Chicago Data Portal </a>. 
+  I wanted to translate the data to tell a story about establishments that have failed food inspections across the Chicago area.
 </p>
 
 <div class="image-text-container">
   <img src="data1.png" class="headshot" alt="The full data set on food inspections from the Chicago Data Portal.">
   <div class="aboutme-right">
-    <h2>About Me</h2>
-    <p> text </p>
+    <h3>1. Filtering the data set</h3>
+    <p> I downloaded the raw data from the Chicago Data Portal in .csv form. Because the file was too large to open in Google Sheets, I manipulated it in Excel. </p>
+    <p> The goal was to tell a story through both a chart and a map.</p>
   </div>
   </div>
+<br>
+  <div class="image-text-container">
+    <img src="pivot.png" class="headshot" alt="Pivot table of food inspections data in Chicago, organized by the number of passes and fails in each ZIP code.">
+    <div class="aboutme-right">
+      <h3>2. Creating a pivot table</h3>
+      <p> To select the data I wanted for my chart, I created a pivot table (insert > pivot table).
+        Sorting by ZIP codes, I filtered the data to only show a count of the inspection results — specifically, pass and fail (excluding
+        out of business, pass with conditions, not ready, etc.). I manually filtered out ZIP codes that had only passes or only fails. 
+        Using a formula (roughly Bn/B(n-1)), I calculated the fail rate of food inspections in each ZIP, displayed in the third column.</p>
+    </div>
+    </div>
+<div class="image-text-container">
+  <img src="chartdata.png" class="headshot" alt="The chart data inserted into Flourish.">
+  <div class="aboutme-right">
+    <h3>3. Uploading data to Flourish</h3>
+    <p> Taking the ZIP codes and percentage fail rates, I imported this data into Flourish. I was able to make and publish the following horizontal bar chart:</p>
+  </div>
+  </div>
+  <br>
+  <div class="flourish-embed flourish-chart" data-src="visualisation/19853886"><script src="https://public.flourish.studio/resources/embed.js"></script>
+    <noscript><img src="https://public.flourish.studio/visualisation/19853886/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+
+<br>
+<p> Next, I wanted to make a heat map that could visually represent failed food inspections in Chicago.</p>
+<div class="image-text-container">
+  <img src="data1.png" class="headshot" alt="The full data set on food inspections from the Chicago Data Portal.">
+  <div class="aboutme-right">
+    <h3>1. Filtering the data set</h3>
+    <p> I went back to the same data set. This time, I filtered it so that only "failed" results would show. </p>
+  </div>
+  </div>
+<br>
+  <div class="image-text-container">
+    <img src="location-data.png" class="headshot" alt="The map data in Flourish.">
+    <div class="aboutme-right">
+      <h3>2. Uploading the data to Flourish</h3>
+      <p> In a map template in Flourish, I uploaded all the "fail" data points from my spreadsheet, including the establishment name, risk level (for additional detail),
+        and latitude and longitude. </p>
+    </div>
+    </div>
+<br>
+    <div class="image-text-container">
+      <img src="zips.png" class="headshot" alt="The geographic boundaries data in Flourish.">
+      <div class="aboutme-right">
+        <h3>3. Adding ZIP code boundaries</h3>
+        <p> To enhance the visualization, I wanted to add in map lines that would demarcate each ZIP code in the Chicago area. 
+          To do this, I downloaded the ZIP Code Boundaries data set from the <a href="https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-ZIP-Codes/gdcf-axmw">Chicago Data Portal</a> in its GeoJSON form. I uploaded it
+        directly to Flourish. </p>
+        <p>This was my final heat map:</p>
+      </div>
+      </div>
+      <div class="flourish-embed flourish-map" data-src="visualisation/19925330"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/19925330/thumbnail" width="100%" alt="map visualization" /></noscript></div>
+
+<br>
+<div class="socialmedia">
+	<div class="transbox">
+	  <h2>social media</h2>
+	</div>
+  </div>
+<br>
+
+<p> Here are a few of my profiles that have been featured on Instagram.</p>
+
+<div class="instagram-row">
+  <div class="instagram-post">
+      <!-- Instagram Embed Code for Post 1 -->
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C-vXAvHvexJ/"></blockquote>
+  </div>
+  <div class="instagram-post">
+      <!-- Instagram Embed Code for Post 3 -->
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CvjvBrgNjRd/"></blockquote>
+  </div>
+  <div class="instagram-post">
+      <!-- Instagram Embed Code for Post 4 -->
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CugOR5itHpz/"></blockquote>
+  </div>
+</div>
+
+<script async src="//www.instagram.com/embed.js"></script>
 
 </body>
 </html>
