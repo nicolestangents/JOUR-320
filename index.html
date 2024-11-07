@@ -50,7 +50,7 @@ a:hover {
   color: hotpink;
 }
 
-  /* Divs */
+  /* CLIPS DIVS */
 div.newsroom {
   background: url("newsroom.jpg");
   border: 2px solid black;
@@ -146,6 +146,16 @@ div.midstory {
   margin-top: 2%;
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+  
+  div.nbc, div.scmp, div.propublica, div.midstory {
+    width: 100%;
+    margin: 0 0 10px 0; /* Margin adjustments for spacing */
+  }
+}
 .propublica-image {
    width: 100%;
    display: block; 
@@ -173,14 +183,24 @@ div.midstory {
    text-align: left;
 }
 
+@media (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column; 
+  }
+  
+  div.headshot, div.aboutme-right {
+    width: 100%;
+    margin: 0 0 10px 0; 
+  }
+}
+  /* MULTIMEDIA DIVS */
 .multimedia-container {
   display: flex;
-  align-items: flex-start; /* Align items to the top */
-  gap: 20px; /* Adds space between video and text */
+  align-items: flex-start;
+  gap: 20px; 
 }
 
 .youtube-container {
-  max-width: 400px; /* Set max width for the video */
   position: relative;
   width: 100%; /* Set to full width of the container */
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -195,34 +215,31 @@ div.midstory {
   height: 100%;
 }
 
-.youtube-text-container {
-  flex: 1; /* Text container takes up one portion of space */
-  max-width: 400px; /* Set a max-width to control text container size */
-  margin-left: 20px;
-}
-
+  /* SOCIAL MEDIA DIVS */
 .instagram-row {
     display: flex;
     flex-wrap: wrap; /* Allows posts to wrap on smaller screens */
-    gap: 16px; /* Adjusts the spacing between posts */
+    gap: 16px; 
     justify-content: space-between;
 }
 
 .instagram-post {
-    flex: 1; /* Adjusts width to fit four posts across the row */
-    margin: 10px; /* Adds spacing around each post */
-    max-width: 23%; /* Ensures the posts fit within the row */
+    flex: 1;
+    margin: 10px; 
+    max-width: 23%; 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .instagram-post {
-        flex: 1 1 100%; /* Stacks posts vertically */
+        flex: 1 1 100%; 
         max-width: 100%;
     }
 }
 
 </style>
 </head>
+
+
 
 <body>
 
@@ -321,6 +338,10 @@ div.midstory {
   </div>
 <br>
 
+<h2> "With Every Breath" Documentary</h2>
+<p>I had the pleasure of assisting ProPublica videojournalist Liz Moughon with her filming of the documentary 
+  accompanying the "With Every Breath" series. During my reporting trip to Portland, I set up and tore down equipment, 
+monitored interview recordings, and reviewed footage for editing.</p>
 <div class="multimedia-container">
   <div class="youtube-container">
     <iframe 
@@ -330,10 +351,6 @@ div.midstory {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
     </iframe>
-  </div>
-  <div class="youtube-text-container">
-    <p><b>"With Every Breath" Documentary</b></p>
-    <p>I had the pleasure of assisting ProPublica videojournalist Liz Moughon with her filming of the documentary accompanying the "With Every Breath" series.</p>
   </div>
 </div>
 
@@ -364,6 +381,7 @@ div.midstory {
         Using a formula (roughly Bn/B(n-1)), I calculated the fail rate of food inspections in each ZIP, displayed in the third column.</p>
     </div>
     </div>
+<br>
 <div class="image-text-container">
   <img src="chartdata.png" class="headshot" alt="The chart data inserted into Flourish.">
   <div class="aboutme-right">
@@ -418,15 +436,12 @@ div.midstory {
 
 <div class="instagram-row">
   <div class="instagram-post">
-      <!-- Instagram Embed Code for Post 1 -->
       <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C-vXAvHvexJ/"></blockquote>
   </div>
   <div class="instagram-post">
-      <!-- Instagram Embed Code for Post 3 -->
       <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CvjvBrgNjRd/"></blockquote>
   </div>
   <div class="instagram-post">
-      <!-- Instagram Embed Code for Post 4 -->
       <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CugOR5itHpz/"></blockquote>
   </div>
 </div>
